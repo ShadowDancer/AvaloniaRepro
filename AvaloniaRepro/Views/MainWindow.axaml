@@ -11,5 +11,9 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-  <TextBlock Text="{Binding Greeting}"/>
+  <StackPanel>
+    <TextBlock Text="{Binding SelectedItems.Count}"/>
+    <ListBox Items="{Binding Items}" SelectedItems="{Binding SelectedItems}"/>
+  </StackPanel>
+
 </Window>
