@@ -12,8 +12,14 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
   <StackPanel>
-    <TextBlock Text="{Binding SelectedItems.Count}"/>
-    <ListBox Items="{Binding Items}" SelectedItems="{Binding SelectedItems}"/>
+    <DataGrid Items="{Binding Items}" CanUserSortColumns="True" CanUserResizeColumns="True">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Header" Binding="{Binding}" IsReadOnly="False"/>
+        <DataGridTextColumn Header="Dummy"/>
+      
+      </DataGrid.Columns>    
+  
+    </DataGrid>
   </StackPanel>
 
 </Window>
