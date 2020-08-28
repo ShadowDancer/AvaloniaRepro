@@ -11,5 +11,24 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-  <TextBlock Text="{Binding Greeting}"/>
+  <SplitView x:Name="SW" IsPaneOpen="True" DisplayMode="Overlay">
+    <SplitView.Pane>
+      <StackPanel>
+        <TextBlock Text="Panel is closing when trying to manipulate combobox"/>
+        <ComboBox Margin="5">
+          <ComboBox.Items>
+            ABCD
+          </ComboBox.Items>
+        </ComboBox>
+      </StackPanel>
+      
+    </SplitView.Pane>
+
+    <SplitView.Content>
+      <StackPanel Orientation="Horizontal">
+        <TextBlock Text="Pane open"/>
+        <CheckBox IsChecked="{Binding #SW.IsPaneOpen}" VerticalAlignment="Top"/>
+      </StackPanel>
+    </SplitView.Content>
+  </SplitView>
 </Window>
